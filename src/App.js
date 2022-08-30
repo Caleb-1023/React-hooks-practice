@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Products from './components/Products';
+import JumbotronComponent from './components/JumbotronComponent';
+import UserForm from './components/UserForm';
+import GitHub from './components/GitHub';
+
+function formatName(user) {
+  return `${user.firstName} ${user.lastName}`;
+  // return `{user.firstName}`
+}
 
 function App() {
+  const user = {
+    firstName: "Caleb",
+    lastName: "Lex"
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <GitHub />
     </div>
   );
 }
 
 export default App;
+
+
+
+{/* <JumbotronComponent>
+  This is a long sentence and I want to pass props from the outside
+</JumbotronComponent> */}
+{/* <UserForm /> */}
+{/* <Products /> */}
